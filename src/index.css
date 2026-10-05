@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Playfair Display', serif;
+    --font-handwriting: 'Caveat', cursive;
+    --font-playful: 'Patrick Hand', cursive;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    
+    --title-size: 2.75rem;
+    --body-size: 1rem;
+    --handwritten-size: 1.35rem;
+    --letter-spacing: 0.02em;
+    --line-height: 1.6;
+    
+    --color-canvas: #121016;
+    --color-surface: #1C1924;
+    --color-card: #252230;
+    --color-blush: #E8C5C8;
+    --color-cream: #FAF6EE;
+    --color-accent: #D4A373;
+    --color-muted: #A8A29E;
+  }
+}
+
+/* Custom Paper Texture & Atmosphere */
+.paper-texture {
+  background-color: #FAF5ED;
+  background-image: radial-gradient(#d3c7b5 0.75px, transparent 0.75px);
+  background-size: 14px 14px;
+}
+
+.dark-paper-texture {
+  background-color: var(--color-canvas);
+  background-image: radial-gradient(rgba(232, 197, 200, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Storybook typography utility classes */
+.font-display {
+  font-family: var(--font-display), serif;
+}
+
+.font-handwriting {
+  font-family: var(--font-handwriting), cursive;
+}
+
+.font-playful {
+  font-family: var(--font-playful), cursive;
+}
+
+.font-body {
+  font-family: var(--font-body), sans-serif;
+}
+
+/* Custom Soft Animations */
+@keyframes candleFlicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.8));
+  }
+  25% {
+    transform: scale(1.08, 0.96) rotate(1.5deg);
+    opacity: 0.85;
+    filter: drop-shadow(0 0 14px rgba(251, 191, 36, 0.95));
+  }
+  50% {
+    transform: scale(0.96, 1.05) rotate(-2deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.85));
+  }
+  75% {
+    transform: scale(1.03, 1.02) rotate(0.5deg);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 16px rgba(251, 191, 36, 0.9));
+  }
+}
+
+.animate-candle {
+  animation: candleFlicker 1.8s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes gentleSway {
+  0%, 100% {
+    transform: rotate(-1.5deg);
+  }
+  50% {
+    transform: rotate(1.5deg);
+  }
+}
+
+.animate-sway {
+  animation: gentleSway 4.5s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: gentleFloat 5s ease-in-out infinite;
+}
+
+@keyframes heartBreathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-heart-breathe {
+  animation: heartBreathe 2.4s ease-in-out infinite;
+}
+
+/* Washi tape visual illusion */
+.washi-tape {
+  background: rgba(232, 197, 200, 0.65);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px);
+}
+
+/* Film grain effect */
+.film-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}

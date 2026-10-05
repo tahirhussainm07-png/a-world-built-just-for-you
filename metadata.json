@@ -1,0 +1,7 @@
+{
+  "name": "A World Just For You",
+  "description": "A private, handmade interactive birthday universe filled with personal memories, garden lore, lilies, jasmine, and quiet magic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
